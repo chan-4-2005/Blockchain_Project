@@ -574,13 +574,13 @@ function App() {
 
   // ---------------- FETCH ----------------
   const getItem = async () => {
-    const res = await axios.get(`http://localhost:3000/item/${searchId}`);
+    const res = await axios.get(`https://blockchain-project-backend.onrender.com/item/${searchId}`);
     setItem(res.data);
   };
 
   const getHistory = async () => {
     const res = await axios.get(
-      `http://localhost:3000/history/${searchId}`
+      `https://blockchain-project-backend.onrender.com/history/${searchId}`
     );
     setHistory(res.data);
   };
