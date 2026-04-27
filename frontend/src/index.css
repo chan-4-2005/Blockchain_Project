@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-stone-950 text-gray-200 overflow-x-hidden font-sans selection:bg-lime-500/30;
+    /* Create a smooth tactical dark background */
+    background: radial-gradient(circle at top right, #1c1917, #0c0a09);
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Orbitron'] tracking-wider;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-stone-900/60 backdrop-blur-xl border border-lime-500/10 shadow-2xl;
+  }
+  
+  .glass-input {
+    @apply bg-stone-950/80 border border-stone-700/80 text-gray-200 focus:outline-none focus:ring-2 focus:ring-lime-500/50 focus:border-lime-500/50 transition-all rounded-sm shadow-inner;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-lime-600 to-green-700 text-white font-bold tracking-widest shadow-[0_0_15px_rgba(101,163,13,0.4)] hover:shadow-[0_0_25px_rgba(101,163,13,0.6)] hover:-translate-y-0.5 transition-all duration-300 rounded-sm border border-lime-500/30 uppercase;
+  }
+
+  .btn-danger {
+    @apply bg-gradient-to-r from-red-600 to-rose-800 text-white font-bold tracking-widest shadow-[0_0_15px_rgba(220,38,38,0.4)] hover:shadow-[0_0_25px_rgba(220,38,38,0.6)] hover:-translate-y-0.5 transition-all duration-300 rounded-sm border border-red-500/30 uppercase;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-stone-600 to-stone-800 text-white font-bold tracking-widest shadow-[0_0_15px_rgba(87,83,78,0.4)] hover:shadow-[0_0_25px_rgba(87,83,78,0.6)] hover:-translate-y-0.5 transition-all duration-300 rounded-sm border border-stone-500/30 uppercase;
+  }
+  
+  .btn-warning {
+    @apply bg-gradient-to-r from-amber-500 to-orange-700 text-white font-bold tracking-widest shadow-[0_0_15px_rgba(245,158,11,0.4)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:-translate-y-0.5 transition-all duration-300 rounded-sm border border-amber-500/30 uppercase;
+  }
+
+  .nav-item {
+    @apply block w-full text-left px-4 py-3 rounded-sm text-stone-400 font-medium hover:text-lime-400 hover:bg-lime-500/5 transition-all duration-200 border border-transparent hover:border-lime-500/10 uppercase tracking-widest text-sm;
+  }
+  
+  .nav-item-active {
+    @apply block w-full text-left px-4 py-3 rounded-sm text-lime-400 bg-lime-500/10 border border-lime-500/30 shadow-[0_0_10px_rgba(101,163,13,0.1)] transition-all duration-200 uppercase tracking-widest text-sm font-bold;
+  }
+
+  .animated-bg {
+    background: linear-gradient(-45deg, #1c1917, #3f6212, #0c0a09, #1c1917);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+  }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Custom Scrollbar - Military Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0a09;
+}
+::-webkit-scrollbar-thumb {
+  background: #292524;
+  border-radius: 0px; /* Square corners for rugged look */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #44403c;
+}
